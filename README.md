@@ -20,3 +20,15 @@
 ## 📷 Flow Overview
 ![flow-overview](https://github.com/user-attachments/assets/7ed81333-1c51-47b2-a4e3-8fffc9cbfe24)
 
+## 📂 How It Works
+1. A lead is created.
+2. Flow checks `LeadAssignmentMapping__mdt` for a region match.
+3. If found, assigns the lead to that user.
+4. If not found, an Apex action assigns the lead to the next fallback user in a round-robin manner.
+
+## 📦 Metadata Sample
+
+```csv
+DeveloperName,Region__c,UserId__c,Label
+USA_Mapping,USA,005XXXXXXX100,USA Mapping
+UK_Mapping,UK,005XXXXXXX101,UK Mapping
